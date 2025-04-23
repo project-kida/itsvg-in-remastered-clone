@@ -1,38 +1,38 @@
 
 import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import { Link } from 'lucide-react';
 
 interface ProjectCardProps {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
+  domain: string;
   link?: string;
-  color?: string;
 }
 
-const ProjectCard = ({ icon, title, description, link, color = 'bg-gray-100' }: ProjectCardProps) => {
+const ProjectCard = ({ icon, title, description, domain, link }: ProjectCardProps) => {
   return (
-    <div className="bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow overflow-hidden border border-gray-100">
       <div className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className={`w-10 h-10 ${color} rounded-full flex items-center justify-center`}>
-            <img src={icon} alt={title} className="w-5 h-5" />
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-xl overflow-hidden">
+            <img src={icon} alt={title} className="w-full h-full object-cover" />
           </div>
-          
+          <div className="flex-1">
+            <h3 className="font-semibold text-lg">{title}</h3>
+            <p className="text-sm text-blue-500">{domain}</p>
+          </div>
           {link && (
             <a 
               href={link} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-gray hover:text-black transition-colors"
+              className="text-gray-400 hover:text-gray-600 transition-colors"
             >
-              <ExternalLink size={18} />
+              <Link size={20} />
             </a>
           )}
         </div>
-        
-        <h3 className="font-semibold text-lg mb-2">{title}</h3>
-        <p className="text-gray text-sm">{description}</p>
       </div>
     </div>
   );

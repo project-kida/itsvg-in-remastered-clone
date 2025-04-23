@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import SupportSection from '@/components/SupportSection';
 import Footer from '@/components/Footer';
 import TopNavbar from '@/components/TopNavbar';
+import Terminal from '@/components/Terminal';
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
       <TopNavbar />
       <div id="home">
         <Hero />
+        <Terminal />
       </div>
       <Navigation />
       <div id="about">

@@ -1,68 +1,69 @@
 
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import { Button } from './ui/button';
 
 const ProjectsSection = () => {
   const projects = [
     {
       icon: '/placeholder.svg',
-      title: 'Capture My Tweet',
-      description: 'Generate beautiful image from your Twitter tweets!',
-      color: 'bg-gray-100',
+      title: 'Capture my Tweet',
+      domain: 'cmt.itsvg.in',
+      link: 'https://cmt.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'ColPat',
-      description: 'Simple, beautiful Color Palette generator',
-      color: 'bg-amber-100',
+      title: 'ColPat : Color Palette & Design Tool',
+      domain: 'colpat.itsvg.in',
+      link: 'https://colpat.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'Dualite',
-      description: 'Beautiful CSS gradients for your next project',
-      color: 'bg-green-100',
+      title: 'JobMatchPro : Your AI Recruiter',
+      domain: 'jobmatch.itsvg.in',
+      link: 'https://jobmatch.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'Meta Link Preview',
-      description: 'Generate beautiful link previews for your websites',
-      color: 'bg-teal-100',
+      title: 'Visit Count Pro',
+      domain: 'visitcountpro.netlify.app',
+      link: 'https://visitcountpro.netlify.app'
     },
     {
       icon: '/placeholder.svg',
-      title: 'OTP Input Pattern',
-      description: 'OTP manual INPUT pattern made for Web',
-      color: 'bg-blue-100',
+      title: 'GPRM : GitHub Profile ReadMe Maker',
+      domain: 'gprm.itsvg.in',
+      link: 'https://gprm.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'JIGSAWR',
-      description: 'Connect different APIs and make custom workflows',
-      color: 'bg-purple-100',
+      title: 'YTMP : YouTube Music Player',
+      domain: 'ytmp.itsvg.in',
+      link: 'https://ytmp.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'RDBMS',
-      description: 'A better way to understand RDBMS concepts',
-      color: 'bg-pink-100',
+      title: 'YTViral: Viral Spark in Every Video',
+      domain: 'ytviral.itsvg.in',
+      link: 'https://ytviral.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'JobMatchPro',
-      description: 'Match your skills with job requirements',
-      color: 'bg-amber-100',
+      title: 'Pixlyze',
+      domain: 'pixlyze.itsvg.in',
+      link: 'https://pixlyze.itsvg.in'
     },
     {
       icon: '/placeholder.svg',
-      title: 'YouTube Video Creator',
-      description: 'Auto create YouTube videos from content',
-      color: 'bg-red-100',
-    },
+      title: 'YouTube Word Counter',
+      domain: 'ytword.itsvg.in',
+      link: 'https://ytword.itsvg.in'
+    }
   ];
 
   return (
     <section id="projects" className="py-16 container max-w-6xl mx-auto px-4">
-      <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
+      <h2 className="text-6xl font-bold mb-12 text-center">Projects</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
@@ -70,19 +71,16 @@ const ProjectsSection = () => {
             key={index}
             icon={project.icon}
             title={project.title}
-            description={project.description}
-            color={project.color}
+            domain={project.domain}
+            link={project.link}
           />
         ))}
       </div>
       
       <div className="mt-12 flex justify-center">
-        <a 
-          href="#" 
-          className="bg-black hover:bg-black/80 text-white py-2.5 px-5 rounded-full text-sm font-medium transition-colors"
-        >
-          View More
-        </a>
+        <Button variant="outline" size="lg" className="rounded-full">
+          Load More
+        </Button>
       </div>
     </section>
   );
