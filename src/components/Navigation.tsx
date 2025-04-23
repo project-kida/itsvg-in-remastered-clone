@@ -8,7 +8,6 @@ const Navigation = () => {
     { id: 'home', label: 'HOME' },
     { id: 'about', label: 'ABOUT ME' },
     { id: 'projects', label: 'PROJECTS' },
-    { id: 'testimony', label: 'TESTIMONY' },
     { id: 'contact', label: 'CONTACT' }
   ];
 
@@ -16,7 +15,14 @@ const Navigation = () => {
     setActiveItem(id);
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offset = 100; // Account for fixed header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 

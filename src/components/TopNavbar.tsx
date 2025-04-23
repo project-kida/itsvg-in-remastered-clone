@@ -1,8 +1,10 @@
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { Toggle } from './ui/toggle';
 
 const TopNavbar = () => {
   const [time, setTime] = React.useState(new Date());
+  const [isDark, setIsDark] = useState(false);
 
   React.useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -24,8 +26,12 @@ const TopNavbar = () => {
     }).format(date);
   };
 
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+  };
+
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50 py-4 px-6">
+    <div className={`fixed top-0 left-0 right-0 ${isDark ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-sm z-50 py-4 px-6 transition-colors duration-200`}>
       <div className="container max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-2">
           <span className="text-3xl">👋</span>
@@ -65,9 +71,20 @@ const TopNavbar = () => {
               </svg>
             </a>
           </div>
+          <Toggle 
+            onClick={toggleTheme}
+            className="w-8 h-8 p-1 hover:bg-transparent mr-4"
+            aria-label="Toggle theme"
+          >
+            {isDark ? (
+              <Sun className="h-4 w-4 text-yellow-500" />
+            ) : (
+              <Moon className="h-4 w-4 text-gray-600" />
+            )}
+          </Toggle>
           <div className="text-right">
-            <div className="text-xl font-bold">{formatTime(time)}</div>
-            <div className="text-sm text-gray">{formatDate(time)}</div>
+            <div className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-800'}`}>{formatTime(time)}</div>
+            <div className={`text-sm ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{formatDate(time)}</div>
           </div>
         </div>
       </div>
