@@ -4,7 +4,7 @@ import { Coffee } from 'lucide-react';
 
 const SupportSection = () => {
   return (
-    <section className="py-16 container max-w-6xl mx-auto px-4">
+    <section className="py-16 pb-24 container max-w-6xl mx-auto px-4">
       <div className="text-center max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">Enjoying my content?</h2>
         <p className="text-gray mb-8">

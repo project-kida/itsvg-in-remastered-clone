@@ -12,9 +12,17 @@ const Navigation = () => {
     { id: 'contact', label: 'CONTACT' }
   ];
 
+  const scrollToSection = (id: string) => {
+    setActiveItem(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-      <nav className="bg-gray-900/80 backdrop-blur-sm px-2 py-1.5 rounded-full flex items-center space-x-1 max-w-md shadow-lg">
+      <nav className="bg-gray-900/80 backdrop-blur-sm px-4 py-1.5 rounded-full flex items-center shadow-lg">
         {navItems.map(item => (
           <button
             key={item.id}
@@ -23,7 +31,7 @@ const Navigation = () => {
                 ? 'bg-white text-black'
                 : 'text-white hover:bg-white/10'
             }`}
-            onClick={() => setActiveItem(item.id)}
+            onClick={() => scrollToSection(item.id)}
           >
             {item.label}
           </button>
