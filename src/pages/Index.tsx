@@ -9,10 +9,12 @@ import ExperienceSection from '@/components/ExperienceSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import SupportSection from '@/components/SupportSection';
 import Footer from '@/components/Footer';
+import TopNavbar from '@/components/TopNavbar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-24">
+      <TopNavbar />
       <div id="home">
         <Hero />
       </div>
