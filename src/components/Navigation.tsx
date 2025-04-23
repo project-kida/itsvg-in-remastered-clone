@@ -13,8 +13,8 @@ const Navigation = () => {
   ];
 
   return (
-    <div className="flex justify-center py-3">
-      <nav className="bg-gray-900/80 backdrop-blur-sm px-2 py-1.5 rounded-full flex items-center space-x-1 max-w-md overflow-x-auto">
+    <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+      <nav className="bg-gray-900/80 backdrop-blur-sm px-2 py-1.5 rounded-full flex items-center space-x-1 max-w-md shadow-lg">
         {navItems.map(item => (
           <button
             key={item.id}
