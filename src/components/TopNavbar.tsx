@@ -32,7 +32,7 @@ const TopNavbar = () => {
   return (
     <div className={`fixed top-0 left-0 right-0 ${isDark ? 'bg-gray-900/80' : 'bg-white/80'} backdrop-blur-sm z-50 py-4 px-6 transition-colors duration-200`}>
       <div className="container max-w-6xl mx-auto flex justify-between items-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           <span className="text-3xl">👋</span>
           <span className="text-xl font-display text-amber-400">Hello!</span>
         </div>
@@ -72,7 +72,7 @@ const TopNavbar = () => {
           </div>
           <Toggle 
             onClick={toggleTheme}
-            className="w-8 h-8 p-1 hover:bg-transparent mr-4"
+            className="w-8 h-8 p-1 hover:bg-transparent"
             aria-label="Toggle theme"
           >
             {isDark ? (
