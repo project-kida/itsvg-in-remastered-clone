@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+
+import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 import { Toggle } from './ui/toggle';
+import { useTheme } from '@/context/ThemeContext';
 
 const TopNavbar = () => {
-  const [time, setTime] = React.useState(new Date());
-  const [isDark, setIsDark] = useState(false);
+  const [time, setTime] = useState(new Date());
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === 'dark';
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
@@ -24,10 +27,6 @@ const TopNavbar = () => {
       month: 'long',
       day: 'numeric',
     }).format(date);
-  };
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
   };
 
   return (
